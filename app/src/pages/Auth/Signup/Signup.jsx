@@ -1,4 +1,5 @@
 import {
+  Button,
   Card,
   Center,
   Checkbox,
@@ -10,6 +11,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
@@ -20,7 +22,7 @@ const Signup = () => {
           <Text textStyle="p2" color="black.60" mt="4">
             Create a free account by filling data below.
           </Text>
-          <Stack mt="10">
+          <Stack mt="10" spacing={6}>
             <Flex gap="4">
               <FormControl>
                 <FormLabel htmlFor="name">Name</FormLabel>
@@ -56,13 +58,25 @@ const Signup = () => {
               />
             </FormControl>
             <Checkbox>
-              <Text fontSize="p3">
-              I agree with{" "}
-              <Text as="span" color="p.purple">
-                Terms & Conditions.
-              </Text>
+              <Text textStyle="p3">
+                I agree with{" "}
+                <Link to="/signin">
+                  <Text as="span" color="p.purple">
+                    Terms & Conditions.
+                  </Text>
+                </Link>
               </Text>
             </Checkbox>
+            <Button>Create Account</Button>
+            <Text textStyle="p3" color="black.60" textAlign="center">
+              Already have an account?{" "}
+              <Link to="/signin">
+                {" "}
+                <Text as="span" color="p.purple">
+                  Log In
+                </Text>{" "}
+              </Link>
+            </Text>
           </Stack>
         </Card>
       </Center>
