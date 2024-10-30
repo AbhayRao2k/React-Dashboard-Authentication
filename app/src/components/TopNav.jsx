@@ -11,7 +11,7 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
-import { FaBars, FaUserTie } from "react-icons/fa";
+import { FaBars, FaUserCircle } from "react-icons/fa";
 const TopNav = ({ title, onOpen }) => {
   return (
     <Box px="4" bg="white">
@@ -30,7 +30,7 @@ const TopNav = ({ title, onOpen }) => {
 
         <Menu>
           <MenuButton>
-            <Icon as={FaUserTie} fontSize="24px" />
+            <Icon as={FaUserCircle} fontSize="24px" />
           </MenuButton>
           <MenuList>
             <MenuItem>Logout</MenuItem>
