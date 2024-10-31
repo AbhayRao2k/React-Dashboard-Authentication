@@ -26,7 +26,7 @@ export const theme = extendTheme(
     textStyles: {
       h1: {
         fontSize: {
-          base: "24px",
+          base: "30px",
           md: "32px",
         },
         color: "p.black",
@@ -37,7 +37,7 @@ export const theme = extendTheme(
       },
       h2: {
         fontSize: {
-          base: "24px",
+          base: "34px",
           md: "28px",
         },
         color: "p.black",
@@ -114,7 +114,7 @@ export const theme = extendTheme(
       global: {
         // styles for the `body`
         body: {
-          bg: "#F3F3F7",
+          bg: "white",
         },
       },
     },
