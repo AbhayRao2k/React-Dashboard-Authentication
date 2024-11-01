@@ -15,20 +15,15 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
-import { object, string, ref } from "yup";
+import { object, string } from "yup";
 import { useState } from "react";
 import Card from "../../../components/Card";
 
 const signinValidationScheme = object({
-  name: string().required("Name is required"),
-  surname: string().required("Surname is required"),
   email: string().email("Email is invalid").required("Email is required"),
   password: string()
     .min(6, "Password must be atleast 6 characters")
     .required("Password is required"),
-  retypePassword: string()
-    .oneOf([ref("password"), null], "Passwords must match")
-    .required("Please retype your password"),
 });
 
 const Signin = () => {
