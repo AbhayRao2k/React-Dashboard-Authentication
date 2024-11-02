@@ -8,9 +8,9 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Card from "../../../components/Card";
-import { MdMail } from "react-icons/md";
+import { FaCheckCircle } from "react-icons/fa";
 
-const RegisterEmailVerify = () => {
+const ForgotPasswordSent = () => {
   return (
     <Container>
       <Center minH="100vh">
@@ -22,20 +22,17 @@ const RegisterEmailVerify = () => {
           showCard={true}
         >
           <VStack spacing={6}>
-            <Icon as={MdMail} boxSize="48px" color="p.purple" />
+            <Icon as={FaCheckCircle} boxSize="48px" color="green" />
             <Text textStyle="h4" fontWeight="medium" color="p.black">
-              Email Verification
+              Successfully Sent
             </Text>
             <Text textAlign="center" textStyle="p2" color="black.60">
-              We have sent you an email verification to{" "}
+              We have sent instructions on how to reset your password to{" "}
               <Box as="b" color="p.black">
                 jenny.wilson@gmail.com
               </Box>
-              . If you didn’t receive it, click the button below.
+              . Please follow the instructions from the email.
             </Text>
-            <Button w="full" variant="outline">
-              Re-Send Email
-            </Button>
           </VStack>
         </Card>
       </Center>
@@ -43,4 +40,4 @@ const RegisterEmailVerify = () => {
   );
 };
 
-export default RegisterEmailVerify;
+export default ForgotPasswordSent;
