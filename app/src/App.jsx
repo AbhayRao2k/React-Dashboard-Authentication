@@ -10,6 +10,8 @@ import ForgotPassword from "./pages/Auth/ForgotPassword/ForgotPassword";
 import ForgotPasswordSent from "./pages/Auth/ForgotPasswordSent/ForgotPasswordSent";
 import ResetPasswordSuccess from "./pages/Auth/ResetPasswordSuccess/ResetPasswordSuccess";
 import ResetPassword from "./pages/Auth/ResetPassword/ResetPassword";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools"
 
 const router = createBrowserRouter([
   {
@@ -23,43 +25,51 @@ const router = createBrowserRouter([
   {
     path: "/support",
     element: <Support />,
-  },{
+  },
+  {
     path: "/signup",
-    element: <Signup />
-  },{
+    element: <Signup />,
+  },
+  {
     path: "/signin",
-    element: <Signin />
-  }
-  ,{
+    element: <Signin />,
+  },
+  {
     path: "/register-email-verify",
-    element: <RegisterEmailVerify />
-  }
-  ,{
+    element: <RegisterEmailVerify />,
+  },
+  {
     path: "/register-success",
-    element: <RegisterSuccess />
-  }
-  ,{
+    element: <RegisterSuccess />,
+  },
+  {
     path: "/forgot-password",
-    element: <ForgotPassword />
-  }
-  ,{
+    element: <ForgotPassword />,
+  },
+  {
     path: "/forgot-success",
-    element: <ForgotPasswordSent />
-  }
-  ,{
+    element: <ForgotPasswordSent />,
+  },
+  {
     path: "/reset-success",
-    element: <ResetPasswordSuccess />
-  }
-  ,{
+    element: <ResetPasswordSuccess />,
+  },
+  {
     path: "/reset-password",
-    element: <ResetPassword />
-  }
+    element: <ResetPassword />,
+  },
 ]);
 
 function App() {
+  // Create a client
+  const queryClient = new QueryClient();
+  
   return (
     <>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </>
   );
 }
